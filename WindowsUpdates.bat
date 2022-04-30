@@ -1,0 +1,1 @@
+powershell.exe -nologo -executionpolicy bypass -WindowStyle Normal -noprofile -file "%~dp0WindowsUpdates.ps1"
