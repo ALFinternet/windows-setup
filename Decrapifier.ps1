@@ -2,10 +2,8 @@
 #By CSAND
 #Jan 6 2022
 #
-#
-# Recommended switches: -AppAccess -ClearStart -OneDrive -Tablet -Xbox
-#
-#
+# 2023-11-08
+# add solitaire & MicrosoftWindows.Client.WebExperience to keeper list
 #
 #
 #PURPOSE: Eliminate much of the bloat that comes with Windows 10. Change many privacy settings to be off by default. Remove built-in advertising, Cortana, OneDrive, Cortana stuff (all optional). Disable some data collection.
@@ -47,6 +45,10 @@
 #https://community.spiceworks.com/scripts/show/3298-windows-10-decrapifier-version-1
 #
 #
+#
+#*** Finch Tech Switches ***
+#
+# -AppAccess -ClearStart -OneDrive -Tablet -Xbox
 #
 #***Switches***
 # 
@@ -90,7 +92,7 @@ param (
 #Make sure not begin or end with a "|". ex: "app|app2" - good. "|app|app2|" - bad.
 
 #$GoodApps =	"calculator|camera|sticky|store|windows.photos|soundrecorder|mspaint|microsoft.paint|windowsnotepad|screensketch"
-$GoodApps =  "AMD|NVIDIA|Dell|HP|WavesAudio|Audio|calculator|camera|sticky|store|windows.photos|soundrecorder|mspaint|microsoft.paint|windowsnotepad|screensketch|Microsoft.HEIFImageExtension|Microsoft.HEVCVideoExtension|Microsoft.VP9VideoExtensions|Microsoft.WebMediaExtensions|Microsoft.WebpImageExtension|Extension|Microsoft.YourPhone|Microsoft.MicrosoftEdge|Alarms"
+$GoodApps =  "Dell|WavesAudio|HP|Nvidia|ATI|AMD|ASUS|xbox|onenote|store|calculator|camera|sticky|store|windows.photos|soundrecorder|mspaint|microsoft.paint|windowsnotepad|screensketch|solitaire|WindowsCamera|PrintDialog|Microsoft.HEIFImageExtension|Microsoft.HEVCVideoExtension|Microsoft.VP9VideoExtensions|Microsoft.WebMediaExtensions|Microsoft.WebpImageExtension|Extension|Microsoft.YourPhone|Microsoft.MicrosoftEdge|Alarms"
 
 #Start Menu XML. If you run the script without -ClearStart, the XML below will be used for a custom start layout. By default it just leaves File Explorer, classic Control Panel, and Snipping Tool tiles.
 #Place your XML like so:
@@ -125,7 +127,7 @@ $StartLayoutStr = @"
 
 Function RemoveApps {
 	#SafeApps contains apps that shouldn't be removed, or just can't and cause errors
-	$SafeApps = "AAD.brokerplugin|accountscontrol|apprep.chxapp|assignedaccess|asynctext|bioenrollment|capturepicker|cloudexperience|contentdelivery|desktopappinstaller|ecapp|edge|extension|getstarted|immersivecontrolpanel|lockapp|net.native|oobenet|parentalcontrols|PPIProjection|search|sechealth|secureas|shellexperience|startmenuexperience|terminal|vclibs|xaml|XGpuEject"
+	$SafeApps = "AAD.brokerplugin|accountscontrol|apprep.chxapp|assignedaccess|asynctext|bioenrollment|capturepicker|cloudexperience|contentdelivery|desktopappinstaller|ecapp|edge|extension|getstarted|immersivecontrolpanel|lockapp|net.native|oobenet|parentalcontrols|PPIProjection|search|sechealth|secureas|shellexperience|startmenuexperience|terminal|vclibs|xaml|XGpuEject|webexperience"
 	If ($Xbox) {
 		$SafeApps = "$SafeApps|Xbox" 
 }
