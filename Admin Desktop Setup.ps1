@@ -20,3 +20,32 @@ Install-Module -Name AzureAD -Force
 Install-Module -Name Microsoft.Online.SharePoint.PowerShell -Force
 Install-Module -Name MicrosoftTeams -Force -AllowClobber
 Install-Module -Name ExchangeOnlineManagement -Force
+
+# https://chocolatey.org/install
+# choco feature enable -n allowGlobalConfirmation
+
+# 7-Zip
+choco install 7zip
+# Bitwarden
+choco install bitwarden
+# ImgBurn
+choco install imgburn
+# MicroSIP
+choco install microsip
+# mRemoteNG / MobaXterm
+choco install mremoteng
+# Notepad++
+choco install notepadplusplus
+# OpenVPN Client
+choco install openvpn-connect
+# ShareX
+choco install sharex
+# VLC Player
+choco install vlc
+# VMware OVA plugin
+# VMware Remote Console
+choco install vmrc
+# WinSCP
+choco install winscp
+# Wireguard Client
+choco install wireguard
