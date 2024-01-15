@@ -21,6 +21,23 @@ Install-Module -Name Microsoft.Online.SharePoint.PowerShell -Force
 Install-Module -Name MicrosoftTeams -Force -AllowClobber
 Install-Module -Name ExchangeOnlineManagement -Force
 
+
+# Disable personal OneDrive if you have business OneDrive
+# https://admx.help/?Category=OneDrive&Policy=Microsoft.Policies.OneDriveNGSC::DisablePersonalSync
+
+# Set variables to indicate value and key to set
+$RegistryPath = 'HKCU:\Software\Policies\Microsoft\OneDrive'
+$Name         = 'DisablePersonalSync'
+$Value        = '1'
+# Create the key if it does not exist
+If (-NOT (Test-Path $RegistryPath)) {
+  New-Item -Path $RegistryPath -Force | Out-Null
+}  
+# Now set the value
+New-ItemProperty -Path $RegistryPath -Name $Name -Value $Value -PropertyType DWORD -Force 
+
+
+
 # https://chocolatey.org/install
 # choco feature enable -n allowGlobalConfirmation
 
