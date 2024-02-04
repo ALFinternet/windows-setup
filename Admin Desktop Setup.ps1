@@ -66,3 +66,9 @@ choco install vmrc
 choco install winscp
 # Wireguard Client
 choco install wireguard
+
+
+## VMware PowerCLi fix
+# https://communities.vmware.com/t5/VMware-code-Discussions/PowerCLI-installs-but-does-not-work/td-p/501127
+# https://infiniteloop.io/vmware-powercli-10-setup/
+#
