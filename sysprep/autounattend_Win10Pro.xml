@@ -6,6 +6,9 @@ Created using Windows AFG found at:
 Installation Notes
 Location: 
 Notes: Win10 Pro x64
+
+C:\Windows\System32\Sysprep\sysprep.exe /generalize /shutdown /oobe /unattend:"C:\Windows\System32\Sysprep\Autounattend.xml"
+
 **************************************************-->
 
 <?xml version="1.0" encoding="utf-8"?>
