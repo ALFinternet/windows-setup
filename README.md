@@ -1,5 +1,5 @@
 # windows-setup
-Various Windows 10 Setup Scripts/Files
+Various Windows Setup Scripts/Files
 
 ## os_prep
 Fixes various things I don't like with Windows
