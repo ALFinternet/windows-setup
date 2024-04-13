@@ -4,7 +4,7 @@ Various Windows Setup Scripts/Files
 ##
 1. Install Windows, Shift+F3 at region selection
 2. Run Updates
-3. Remove recovery partition
+3. Remove recovery partition (reagentc /disable, diskpart delete part # override
 4. Install Apps (Chrome, 7Zip, etc)
 5. Organize Start Menu
 6. Run Disk Cleanup
