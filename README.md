@@ -4,13 +4,14 @@ Various Windows Setup Scripts/Files
 ##
 1. Install Windows, Shift+F3 at region selection
 2. Run Updates
-3. Install Apps (Chrome, 7Zip, etc)
-4. Organize Start Menu
-5. Run Disk Cleanup
-6. Run Decrap
-7. Run OSPrep
-8. Run Sysprep
-9. Capture
+3. Remove recovery partition
+4. Install Apps (Chrome, 7Zip, etc)
+5. Organize Start Menu
+6. Run Disk Cleanup
+7. Run Decrap
+8. Run OSPrep
+9. Run Sysprep
+10. Capture
 
 ## os_prep
 Fixes various things I don't like with Windows
