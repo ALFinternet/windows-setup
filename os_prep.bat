@@ -114,6 +114,15 @@ reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsBackup" /v "Disab
 :: Disable Copilot
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot" /v "TurnOffWindowsCopilot" /t REG_DWORD /d "1" /f
 
+:: Enable RDP
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" /v "fDenyTSConnections" /t REG_DWORD /d "0" /f
+
+:: Disable Windows Admin Center popup nag - for server OSes
+reg add "HKLM\SOFTWARE\Microsoft\ServerManager" /v "DoNotPopWACConsoleAtSMLaunch" /t REG_DWORD /d "1" /f
+
+:: Disable AzureARC - for server OSes
+powershell.exe -NoProfile -NonInteractive -NoLogo -ExecutionPolicy Bypass -Command "Get-WindowsFeature AzureArcSetup | Uninstall-WindowsFeature"
+
 
 :: Disable Hibernation (not sure if needed, but doesn't hurt) & set power plan to high performance
 powercfg /H OFF
