@@ -3,6 +3,7 @@
 ::	2023-11-08
 ::
 
+:: https://thedxt.ca/2023/06/moving-windows-recovery-partition-correctly/
 ::diskpart
 ::select disk 0
 ::select part 4
