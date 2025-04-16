@@ -1,6 +1,6 @@
 @ECHO ON
 ::	Run these items after creating a new VM to perform some customizations
-::	2023-11-08
+::	2025-04-15
 ::
 
 :: https://thedxt.ca/2023/06/moving-windows-recovery-partition-correctly/
