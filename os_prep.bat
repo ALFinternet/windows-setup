@@ -22,9 +22,15 @@ reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "H
 :: Show file extensions
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "HideFileExt" /t REG_DWORD /d "0" /f
 :: Disable 'Get Even More Out of Windows Screen' https://winaero.com/disable-get-even-more-out-of-windows-in-windows-10/
+:: https://www.elevenforum.com/t/enable-or-disable-lets-finish-setting-up-your-device-in-windows-11.5205/
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\UserProfileEngagement" /v "ScoobeSystemSettingEnabled" /t REG_DWORD /d "0" /f
 :: Disable start menu suggestions
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-338388Enabled" /t REG_DWORD /d 0 /f
+:: Disable Windows Welcome Experience - https://www.elevenforum.com/t/enable-or-disable-windows-welcome-experience-in-windows-11.3657/
+reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-310093Enabled" /t REG_DWORD /d 0 /f
+:: Disable Get tips and suggestions when using Windows - https://www.elevenforum.com/t/enable-or-disable-tips-and-suggestions-notifications-in-windows-11.5206/
+reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-338389Enabled" /t REG_DWORD /d 0 /f
+
 :: :: https://www.elevenforum.com/t/enable-or-disable-notification-badging-for-microsoft-accounts-on-start-menu-in-windows-11.14645/
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "Start_AccountNotifications" /t REG_DWORD /d 0 /f
 :: Numlock to on
@@ -65,9 +71,15 @@ reg add "HKLM\DefUser\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advance
 :: Show file extensions
 reg add "HKLM\DefUser\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "HideFileExt" /t REG_DWORD /d "0" /f
 :: Disable 'Get Even More Out of Windows Screen' https://winaero.com/disable-get-even-more-out-of-windows-in-windows-10/
+:: https://www.elevenforum.com/t/enable-or-disable-lets-finish-setting-up-your-device-in-windows-11.5205/
 reg add "HKLM\DefUser\SOFTWARE\Microsoft\Windows\CurrentVersion\UserProfileEngagement" /v "ScoobeSystemSettingEnabled" /t REG_DWORD /d "0" /f
 :: Disable start menu suggestions
 reg add "HKLM\DefUser\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-338388Enabled" /t REG_DWORD /d 0 /f
+:: Disable Windows Welcome Experience
+reg add "HKLM\DefUser\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-310093Enabled" /t REG_DWORD /d 0 /f
+:: Disable Get tips and suggestions when using Windows - https://www.elevenforum.com/t/enable-or-disable-tips-and-suggestions-notifications-in-windows-11.5206/
+reg add "HKLM\DefUser\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-338389Enabled" /t REG_DWORD /d 0 /f
+
 :: https://www.elevenforum.com/t/enable-or-disable-notification-badging-for-microsoft-accounts-on-start-menu-in-windows-11.14645/
 reg add "HKLM\DefUser\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "Start_AccountNotifications" /t REG_DWORD /d 0 /f
 :: Numlock to on
@@ -123,6 +135,9 @@ reg add "HKLM\SOFTWARE\Microsoft\ServerManager" /v "DoNotPopWACConsoleAtSMLaunch
 
 :: Disable AzureARC - for server OSes
 powershell.exe -NoProfile -NonInteractive -NoLogo -ExecutionPolicy Bypass -Command "Get-WindowsFeature AzureArcSetup | Uninstall-WindowsFeature"
+
+:: Disable Get tips and suggestions when using Windows - https://www.elevenforum.com/t/enable-or-disable-tips-and-suggestions-notifications-in-windows-11.5206/
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\CloudContent" /v "DisableSoftLanding" /t REG_DWORD /d "1" /f
 
 
 :: Disable Hibernation (not sure if needed, but doesn't hurt) & set power plan to high performance
