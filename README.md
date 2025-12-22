@@ -27,3 +27,8 @@ Add apps to not remove in the $GoodApps variable
 
 ## Forked From
 https://community.spiceworks.com/scripts/show/4378-windows-10-decrapifier-18xx-19xx-2xxx
+
+## My notes
+winget upgrade --all
+winget install -e --id Google.Chrome 
+winget install -e --id "Google.Chrome" --silent --accept-package-agreements --accept-source-agreements --verbose-logs
