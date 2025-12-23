@@ -29,6 +29,13 @@ Add apps to not remove in the $GoodApps variable
 https://community.spiceworks.com/scripts/show/4378-windows-10-decrapifier-18xx-19xx-2xxx
 
 ## My notes
+# https://winstall.app/apps
+# https://github.com/microsoft/winget-pkgs/tree/master/manifests
+
+```
+winget source add -n finchtech -t "Microsoft.Rest" -a https://winget.finchtech.com/wg/
 winget upgrade --all
-winget install -e --id Google.Chrome 
-winget install -e --id "Google.Chrome" --silent --accept-package-agreements --accept-source-agreements --verbose-logs
+winget install -e --id "7zip.7zip" --silent --accept-package-agreements --accept-source-agreements --verbose-logs
+winget install -e --id "VideoLAN.VLC" --silent --accept-package-agreements --accept-source-agreements --verbose-logs
+winget install -e --id "Google.Chrome" --silent --accept-package-agreements --accept-source-agreements --verbose-logs --s finchtech
+```
