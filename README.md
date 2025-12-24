@@ -15,15 +15,15 @@ Phase 2:
 ```
 Install-Script Update-InboxApp -Force
 Get-AppxPackage | Update-InboxApp
+Install-Script Update-InboxApp -Force
+Get-AppxPackage | Update-InboxApp
+winget upgrade --all --silent --accept-package-agreements --accept-source-agreements --verbose-logs
 winget source add -n finchtech -t "Microsoft.Rest" -a https://winget.finchtech.com/wg/
 winget install -e --id "7zip.7zip" --silent --accept-package-agreements --accept-source-agreements --verbose-logs
 winget install -e --id "VideoLAN.VLC" --silent --accept-package-agreements --accept-source-agreements --verbose-logs
 winget install -e --id "Google.Chrome" --silent --accept-package-agreements --accept-source-agreements --verbose-logs -s finchtech
 Import-Module PSWindowsUpdate
 Get-WindowsUpdate -Install -AcceptAll -IgnoreReboot
-Install-Script Update-InboxApp -Force
-Get-AppxPackage | Update-InboxApp
-winget upgrade --all --silent --accept-package-agreements --accept-source-agreements --verbose-logs
 ```
 
 
