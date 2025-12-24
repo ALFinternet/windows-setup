@@ -21,7 +21,9 @@ winget install -e --id "VideoLAN.VLC" --silent --accept-package-agreements --acc
 winget install -e --id "Google.Chrome" --silent --accept-package-agreements --accept-source-agreements --verbose-logs -s finchtech
 Import-Module PSWindowsUpdate
 Get-WindowsUpdate -Install -AcceptAll -IgnoreReboot
-
+Install-Script Update-InboxApp -Force
+Get-AppxPackage | Update-InboxApp
+winget upgrade --all --silent --accept-package-agreements --accept-source-agreements --verbose-logs
 ```
 
 
