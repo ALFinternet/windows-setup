@@ -7,10 +7,14 @@ Install-PackageProvider -Name NuGet -Force
 Install-Module -Name PowerShellGet -Force
 Install-Module PSWindowsUpdate -Force
 Install-Script Update-InboxApp -Force
-winget source add -n finchtech -t "Microsoft.Rest" -a https://winget.finchtech.com/wg/
-winget upgrade --all
+winget upgrade --all --silent --accept-package-agreements --accept-source-agreements --verbose-logs
+winget install -e --id "Microsoft.VCLibs.Desktop.14" --silent --accept-package-agreements --accept-source-agreements --verbose-logs
+winget install -e --id "Microsoft.VCLibs.14" --silent --accept-package-agreements --accept-source-agreements --verbose-logs
+winget install -e --id "Microsoft.WindowsAppRunTime.1.8" --silent --accept-package-agreements --accept-source-agreements --verbose-logs
+winget upgrade --all --silent --accept-package-agreements --accept-source-agreements --verbose-logs
 winget install -e --id "Microsoft.WindowsTerminal" --silent --accept-package-agreements --accept-source-agreements --verbose-logs
 ## RESTART TERMINAL ##
+winget source add -n finchtech -t "Microsoft.Rest" -a https://winget.finchtech.com/wg/
 winget install -e --id "7zip.7zip" --silent --accept-package-agreements --accept-source-agreements --verbose-logs
 winget install -e --id "VideoLAN.VLC" --silent --accept-package-agreements --accept-source-agreements --verbose-logs
 winget install -e --id "Google.Chrome" --silent --accept-package-agreements --accept-source-agreements --verbose-logs -s finchtech
