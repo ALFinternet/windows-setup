@@ -6,15 +6,17 @@ Set-ExecutionPolicy Unrestricted
 Install-PackageProvider -Name NuGet -Force
 Install-Module -Name PowerShellGet -Force
 Install-Module PSWindowsUpdate -Force
-Install-Script Update-InboxApp
+Install-Script Update-InboxApp -Force
 winget source add -n finchtech -t "Microsoft.Rest" -a https://winget.finchtech.com/wg/
 winget upgrade --all
+winget install -e --id "Microsoft.WindowsTerminal" --silent --accept-package-agreements --accept-source-agreements --verbose-logs
+## RESTART TERMINAL ##
 winget install -e --id "7zip.7zip" --silent --accept-package-agreements --accept-source-agreements --verbose-logs
 winget install -e --id "VideoLAN.VLC" --silent --accept-package-agreements --accept-source-agreements --verbose-logs
 winget install -e --id "Google.Chrome" --silent --accept-package-agreements --accept-source-agreements --verbose-logs -s finchtech
+Get-AppxPackage | Update-InboxApp
 Import-Module PSWindowsUpdate
 Get-WindowsUpdate -Install -AcceptAll -IgnoreReboot
-Get-AppxPackage | Update-InboxApp
 ```
 
 Sysprep shortcut
