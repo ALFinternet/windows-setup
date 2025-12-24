@@ -1,6 +1,49 @@
 # windows-setup
 Various Windows Setup Scripts/Files
 
+Phase 1:
+```
+Set-ExecutionPolicy Unrestricted
+Install-PackageProvider -Name NuGet -Force
+Install-Module -Name PowerShellGet -Force
+Install-Module PSWindowsUpdate -Force
+Install-Script Update-InboxApp -Force
+## RESTART WINDOWS
+```
+
+Phase 2:
+```
+Install-Script Update-InboxApp -Force
+Get-AppxPackage | Update-InboxApp
+winget source add -n finchtech -t "Microsoft.Rest" -a https://winget.finchtech.com/wg/
+winget install -e --id "7zip.7zip" --silent --accept-package-agreements --accept-source-agreements --verbose-logs
+winget install -e --id "VideoLAN.VLC" --silent --accept-package-agreements --accept-source-agreements --verbose-logs
+winget install -e --id "Google.Chrome" --silent --accept-package-agreements --accept-source-agreements --verbose-logs -s finchtech
+Import-Module PSWindowsUpdate
+Get-WindowsUpdate -Install -AcceptAll -IgnoreReboot
+
+```
+
+
+
+```
+winget upgrade --all --silent --accept-package-agreements --accept-source-agreements --verbose-logs
+winget install -e --id "Microsoft.VCLibs.Desktop.14" --silent --accept-package-agreements --accept-source-agreements --verbose-logs
+winget install -e --id "Microsoft.VCLibs.14" --silent --accept-package-agreements --accept-source-agreements --verbose-logs
+winget install -e --id "Microsoft.WindowsAppRunTime.1.8" --silent --accept-package-agreements --accept-source-agreements --verbose-logs
+winget upgrade --all --silent --accept-package-agreements --accept-source-agreements --verbose-logs
+winget install -e --id "Microsoft.WindowsTerminal" --silent --accept-package-agreements --accept-source-agreements --verbose-logs
+## RESTART TERMINAL ##
+winget source add -n finchtech -t "Microsoft.Rest" -a https://winget.finchtech.com/wg/
+winget install -e --id "7zip.7zip" --silent --accept-package-agreements --accept-source-agreements --verbose-logs
+winget install -e --id "VideoLAN.VLC" --silent --accept-package-agreements --accept-source-agreements --verbose-logs
+winget install -e --id "Google.Chrome" --silent --accept-package-agreements --accept-source-agreements --verbose-logs -s finchtech
+Get-AppxPackage | Update-InboxApp
+Import-Module PSWindowsUpdate
+Get-WindowsUpdate -Install -AcceptAll -IgnoreReboot
+```
+
+
 ```
 Set-ExecutionPolicy Unrestricted
 Install-PackageProvider -Name NuGet -Force
