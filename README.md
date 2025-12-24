@@ -1,6 +1,31 @@
 # windows-setup
 Various Windows Setup Scripts/Files
 
+```
+Set-ExecutionPolicy Unrestricted
+Install-PackageProvider -Name NuGet -Force
+Install-Module -Name PowerShellGet -Force
+Install-Module PSWindowsUpdate -Force
+Install-Script Update-InboxApp
+winget source add -n finchtech -t "Microsoft.Rest" -a https://winget.finchtech.com/wg/
+winget upgrade --all
+winget install -e --id "7zip.7zip" --silent --accept-package-agreements --accept-source-agreements --verbose-logs
+winget install -e --id "VideoLAN.VLC" --silent --accept-package-agreements --accept-source-agreements --verbose-logs
+winget install -e --id "Google.Chrome" --silent --accept-package-agreements --accept-source-agreements --verbose-logs -s finchtech
+Import-Module PSWindowsUpdate
+Get-WindowsUpdate -Install -AcceptAll -IgnoreReboot
+Get-AppxPackage | Update-InboxApp
+```
+
+Sysprep shortcut
+```
+C:\Windows\System32\Sysprep\sysprep.exe /generalize /shutdown /oobe /unattend:"C:\Windows\System32\Sysprep\Autounattend.xml"
+```
+
+
+
+
+# Old setup notes
 ##
 1. Install Windows, Shift+F3 at region selection
 2. Run Updates
@@ -33,23 +58,3 @@ https://winstall.app/apps
 
 https://github.com/microsoft/winget-pkgs/tree/master/manifests
 
-```
-Set-ExecutionPolicy Unrestricted
-Install-PackageProvider -Name NuGet -Force
-Install-Module -Name PowerShellGet -Force
-Install-Module PSWindowsUpdate -Force
-Install-Script Update-InboxApp
-winget source add -n finchtech -t "Microsoft.Rest" -a https://winget.finchtech.com/wg/
-winget upgrade --all
-winget install -e --id "7zip.7zip" --silent --accept-package-agreements --accept-source-agreements --verbose-logs
-winget install -e --id "VideoLAN.VLC" --silent --accept-package-agreements --accept-source-agreements --verbose-logs
-winget install -e --id "Google.Chrome" --silent --accept-package-agreements --accept-source-agreements --verbose-logs -s finchtech
-Import-Module PSWindowsUpdate
-Get-WindowsUpdate -Install -AcceptAll -IgnoreReboot
-Get-AppxPackage | Update-InboxApp
-```
-
-Sysprep shortcut
-```
-C:\Windows\System32\Sysprep\sysprep.exe /generalize /shutdown /oobe /unattend:"C:\Windows\System32\Sysprep\Autounattend.xml"
-```
