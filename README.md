@@ -43,8 +43,13 @@ winget source add -n finchtech -t "Microsoft.Rest" -a https://winget.finchtech.c
 winget upgrade --all
 winget install -e --id "7zip.7zip" --silent --accept-package-agreements --accept-source-agreements --verbose-logs
 winget install -e --id "VideoLAN.VLC" --silent --accept-package-agreements --accept-source-agreements --verbose-logs
-winget install -e --id "Google.Chrome" --silent --accept-package-agreements --accept-source-agreements --verbose-logs --s finchtech
+winget install -e --id "Google.Chrome" --silent --accept-package-agreements --accept-source-agreements --verbose-logs -s finchtech
 Import-Module PSWindowsUpdate
 Get-WindowsUpdate -Install -AcceptAll -IgnoreReboot
 Get-AppxPackage | Update-InboxApp
+```
+
+Sysprep shortcut
+```
+C:\Windows\System32\Sysprep\sysprep.exe /generalize /shutdown /oobe /unattend:"C:\Windows\System32\Sysprep\Autounattend.xml"
 ```
