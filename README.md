@@ -7,6 +7,7 @@ Set-ExecutionPolicy Unrestricted
 Install-PackageProvider -Name NuGet -Force
 Install-Module -Name PowerShellGet -Force
 Install-Module PSWindowsUpdate -Force
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 Get-WindowsUpdate -Install -AcceptAll -IgnoreReboot
 ```
 
