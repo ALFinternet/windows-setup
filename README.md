@@ -100,6 +100,9 @@ C:\Windows\System32\Sysprep\sysprep.exe /generalize /shutdown /oobe /unattend:"C
 
 
 
+<details>
+
+<summary>Older Notes</summary>
 
 # Old setup notes
 ##
@@ -134,3 +137,4 @@ https://winstall.app/apps
 
 https://github.com/microsoft/winget-pkgs/tree/master/manifests
 
+</details>
