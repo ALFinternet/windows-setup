@@ -3,7 +3,7 @@ Various Windows Setup Scripts/Files
 
 Auto phase:
 ```Powershell
-curl -o diskpart.txt https://raw.githubusercontent.com/ALFinternet/windows-setup/refs/heads/main/core/diskpart.txt
+curl -o "diskpart.txt" "https://raw.githubusercontent.com/ALFinternet/windows-setup/refs/heads/main/core/diskpart.txt"
 diskpart /s diskpart.txt
 Set-ExecutionPolicy Unrestricted
 Install-PackageProvider -Name NuGet -Force
