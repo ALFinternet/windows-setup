@@ -1,0 +1,8 @@
+rem remove recovery partition (4) and expand windows/OS parition (3)
+rem diskpart /s scriptname.txt
+rem 2025-12-26 AF
+select disk 0
+select part 4
+delete part override
+select part 3
+extend

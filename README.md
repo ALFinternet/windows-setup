@@ -1,6 +1,12 @@
 # windows-setup
 Various Windows Setup Scripts/Files
 
+Auto phase:
+```
+curl -Ls https://raw.githubusercontent.com/ALFinternet/windows-setup/refs/heads/main/auto.ps1
+```
+
+
 Phase 1:
 ```
 Set-ExecutionPolicy Unrestricted
