@@ -3,7 +3,8 @@ Various Windows Setup Scripts/Files
 
 Auto phase:
 ```
-curl -Ls https://raw.githubusercontent.com/ALFinternet/windows-setup/refs/heads/main/auto.ps1
+curl -Ls https://raw.githubusercontent.com/ALFinternet/windows-setup/refs/heads/main/core/autowinprosetup.ps1
+curl -Ls https://raw.githubusercontent.com/ALFinternet/windows-setup/refs/heads/main/core/diskpart.txt
 ```
 
 
