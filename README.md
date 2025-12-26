@@ -11,8 +11,9 @@ Get-WindowsUpdate -Install -AcceptAll -IgnoreReboot
 ```
 
 Manual Phase 2:
-1. Remove recovery partition (reagentc /disable, diskpart delete part # override
-2. Install Apps (Chrome, 7Zip, etc)
+1. Remove recovery partition (reagentc /disable, diskpart delete part # override)
+2. Expand C drive
+3. Install Apps (Chrome, 7Zip, VLC Player, etc)
 4. Run Disk Cleanup
 
 
