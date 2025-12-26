@@ -2,11 +2,28 @@
 Various Windows Setup Scripts/Files
 
 Auto phase:
-```
-curl -Ls https://raw.githubusercontent.com/ALFinternet/windows-setup/refs/heads/main/core/autowinprosetup.ps1
-curl -Ls https://raw.githubusercontent.com/ALFinternet/windows-setup/refs/heads/main/core/diskpart.txt
+```Powershell
+curl -o diskpart.txt https://raw.githubusercontent.com/ALFinternet/windows-setup/refs/heads/main/core/diskpart.txt
+diskpart /s diskpart.txt
+Set-ExecutionPolicy Unrestricted
+Install-PackageProvider -Name NuGet -Force
+Install-Module -Name PowerShellGet -Force
+Install-Module PSWindowsUpdate -Force
+Install-Script -Name Invoke-WindowsDiskCleanup
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+choco install 7zip
+choco install googlechrome
+choco install vlc
+Get-WindowsUpdate -Install -AcceptAll -IgnoreReboot
+shutdown /r /f /t 10
 ```
 
+Phase 2:
+```Powershell
+Invoke-WindowsDiskCleanup
+```
+
+### OLD
 
 Phase 1:
 ```
