@@ -9,11 +9,9 @@ Set-ExecutionPolicy Unrestricted
 Install-PackageProvider -Name NuGet -Force
 Install-Module -Name PowerShellGet -Force
 Install-Module PSWindowsUpdate -Force
-Install-Script -Name Invoke-WindowsDiskCleanup
+Install-Script -Name Invoke-WindowsDiskCleanup -Force
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-choco install 7zip
-choco install googlechrome
-choco install vlc
+choco install 7zip googlechrome vlc -y --force
 Get-WindowsUpdate -Install -AcceptAll -IgnoreReboot
 shutdown /r /f /t 10
 ```
