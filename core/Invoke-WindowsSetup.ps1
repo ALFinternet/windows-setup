@@ -18,9 +18,14 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 Write-Host "Installing applications via Chocolatey" -ForegroundColor Green
 choco install 7zip googlechrome vlc -y --force
 Write-Host "Running Windows Updates" -ForegroundColor Green
-Get-WindowsUpdate -Install -AcceptAll -IgnoreReboot
+#Get-WindowsUpdate -Install -AcceptAll -IgnoreReboot
 
 $filePath = "C:\Users\Public\Desktop\VLC media player.lnk"
+if (Test-Path $filePath) {
+    Remove-Item -Path $filePath -Force
+}
+
+$filePath = "C:\Users\Public\Desktop\Edge Browser.lnk"
 if (Test-Path $filePath) {
     Remove-Item -Path $filePath -Force
 }
