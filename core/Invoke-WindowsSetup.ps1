@@ -2,7 +2,7 @@ Set-ExecutionPolicy Unrestricted
 
 Write-Host "Downloading pre-reqs" -ForegroundColor Green
 curl -o "diskpart.txt" "https://raw.githubusercontent.com/ALFinternet/windows-setup/refs/heads/main/core/diskpart.txt"
-curl -o "C:\Windows\System32\Sysprep\autounattend.xml" "https://raw.githubusercontent.com/ALFinternet/windows-setup/refs/heads/main/core/autounattend_pro.xml"
+curl -o "C:\Windows\System32\Sysprep\autounattend.xml" "https://raw.githubusercontent.com/ALFinternet/windows-setup/refs/heads/main/core/autounattend_v1-final.xml"
 curl -o "C:\Windows\System32\Sysprep\sysprep.exe - Shortcut.lnk" "https://raw.githubusercontent.com/ALFinternet/windows-setup/refs/heads/main/core/sysprep.exe - Shortcut.lnk"
 
 diskpart /s diskpart.txt
@@ -17,8 +17,9 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 Write-Host "Installing applications via Chocolatey" -ForegroundColor Green
 choco install 7zip googlechrome vlc -y --force
+
 Write-Host "Running Windows Updates" -ForegroundColor Green
-#Get-WindowsUpdate -Install -AcceptAll -IgnoreReboot
+Get-WindowsUpdate -Install -AcceptAll -IgnoreReboot
 
 $filePath = "C:\Users\Public\Desktop\VLC media player.lnk"
 if (Test-Path $filePath) {
@@ -30,4 +31,4 @@ if (Test-Path $filePath) {
     Remove-Item -Path $filePath -Force
 }
 
-#shutdown /r /f /t 10
+# shutdown /r /f /t 10
