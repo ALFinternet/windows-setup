@@ -20,8 +20,9 @@ choco install 7zip googlechrome vlc -y --force
 Write-Host "Running Windows Updates" -ForegroundColor Green
 Get-WindowsUpdate -Install -AcceptAll -IgnoreReboot
 
-#$filePath = "C:\Users\Admin\diskpart.txt"
-#if (Test-Path $filePath) {
-    #Remove-Item -Path $filePath -Force
-#}
+$filePath = "C:\Users\Public\Desktop\VLC media player.lnk"
+if (Test-Path $filePath) {
+    Remove-Item -Path $filePath -Force
+}
+
 #shutdown /r /f /t 10
