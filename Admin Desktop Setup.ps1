@@ -1,6 +1,8 @@
 # Setup my admin desktop computer
 Install-PackageProvider -Name NuGet -Force
 Install-Module -Name PowerShellGet -Force -AllowClobber
+winget install --id Microsoft.PowerShell --source winget --silent --accept-package-agreements --accept-source-agreements --verbose-logs
+
 
 # Install RSAT Tools
 Add-WindowsCapability -Online -Name "Rsat.ServerManager.Tools~~~~0.0.1.0"
