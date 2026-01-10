@@ -54,6 +54,7 @@ Notes:
 			</DiskConfiguration>
 			<ImageInstall>
 				<OSImage>
+					<Compact>false</Compact>
 					<InstallTo>
 						<DiskID>0</DiskID>
 						<PartitionID>2</PartitionID>
