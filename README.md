@@ -1,6 +1,9 @@
 # windows-setup
 Various Windows Setup Scripts/Files
 
+<details>
+<summary>Desktop</summary>
+
 Setup should auto download the file via:
 ```Powershell
 curl -o "C:\Windows\Setup\Scripts\Invoke-WindowsSetup.ps1" "https://raw.githubusercontent.com/ALFinternet/windows-setup/refs/heads/main/core/Invoke-WindowsSetup.ps1"
@@ -65,3 +68,14 @@ Tested using SW_DVD9_Win_Pro_11_25H2_64BIT_English_Pro_Ent_EDU_N_MLF_X24-13075.I
 ## To Do
 [Dark mode](https://gist.github.com/bobby-tablez/4b5f1ee02c68a93dc8312c4ff858c0a7)
 
+</details>
+
+
+<details>
+<summary>Server</summary>
+
+```Powershell
+curl -o "C:\Windows\Setup\Scripts\Invoke-WindowsServerSetup.ps1" "https://raw.githubusercontent.com/ALFinternet/windows-setup/refs/heads/main/core/Invoke-WindowsServerSetup.ps1"
+```
+
+</details>

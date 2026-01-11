@@ -7,6 +7,8 @@ curl -o "C:\Windows\System32\Sysprep\sysprep.exe - Shortcut.lnk" "https://raw.gi
 
 diskpart /s diskpart.txt
 
+compact /compactos:never
+
 Write-Host "Installing requirements" -ForegroundColor Green
 Install-PackageProvider -Name NuGet -Force
 Install-Module -Name PowerShellGet -Force
