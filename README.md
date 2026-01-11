@@ -75,6 +75,9 @@ Tested using SW_DVD9_Win_Pro_11_25H2_64BIT_English_Pro_Ent_EDU_N_MLF_X24-13075.I
 <summary>Server</summary>
 
 ```Powershell
+if (-not(Test-Path "C:\Windows\Setup\Scripts\" -PathType Container)) {
+    New-Item -path "C:\Windows\Setup\Scripts\" -ItemType Directory
+}
 curl -o "C:\Windows\Setup\Scripts\Invoke-WindowsServerSetup.ps1" "https://raw.githubusercontent.com/ALFinternet/windows-setup/refs/heads/main/core/Invoke-WindowsServerSetup.ps1"
 ```
 
