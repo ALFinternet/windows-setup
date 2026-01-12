@@ -17,6 +17,29 @@ Add-WindowsCapability -Online -Name "Rsat.GroupPolicy.Management.Tools~~~~0.0.1.
 winrm quickconfig -force
 
 # Install M365 Powershells
+$Modules = @(
+
+    "AZ",
+    "ExchangeOnlineManagement",
+    "ImportExcel",
+    "Microsoft.Graph",
+    "Microsoft.Online.SharePoint.PowerShell",
+    "MicrosoftTeams",
+    "Microsoft365DSC",
+    "PNP.PowerShell"
+)
+
+Foreach($Module in $Modules){
+
+    Try{
+        Install-Module $module -Scope AllUsers -Force
+    }Catch{
+        write-host "Error Installing $module `n : $_ `n `n"
+    }
+
+}
+
+# or Install M365 Powershells this way
 Install-Module -Name MSOnline -Force
 Install-Module -Name AzureAD -Force
 Install-Module -Name Microsoft.Online.SharePoint.PowerShell -Force
