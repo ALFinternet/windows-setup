@@ -11,6 +11,7 @@ Add-WindowsCapability -Online -Name "Rsat.CertificateServices.Tools~~~~0.0.1.0"
 Add-WindowsCapability -Online -Name "Rsat.DHCP.Tools~~~~0.0.1.0"
 Add-WindowsCapability -Online -Name "Rsat.Dns.Tools~~~~0.0.1.0"
 Add-WindowsCapability -Online -Name "Rsat.GroupPolicy.Management.Tools~~~~0.0.1.0"
+Add-WindowsCapability -Online -Name "Rsat.BitLocker.Recovery.Tools~~~~0.0.1.0"
 
 # Enable WinRM - https://learn.microsoft.com/en-us/powershell/exchange/exchange-online-powershell-v2?view=exchange-ps#turn-on-basic-authentication-in-winrm
 #winrm set winrm/config/client/auth '@{Basic="true"}'
