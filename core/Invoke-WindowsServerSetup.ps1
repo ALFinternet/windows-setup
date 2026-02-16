@@ -33,4 +33,8 @@ if (Test-Path $filePath) {
     Remove-Item -Path $filePath -Force
 }
 
+$filePath = "C:\Users\Public\Desktop\Microsoft Edge.lnk"
+if (Test-Path $filePath) {
+    Remove-Item -Path $filePath -Force
+}
 # shutdown /r /f /t 10
