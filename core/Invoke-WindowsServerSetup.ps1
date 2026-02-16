@@ -2,7 +2,7 @@ Set-ExecutionPolicy Unrestricted
 
 Write-Host "Downloading pre-reqs" -ForegroundColor Green
 curl -o "diskpart.txt" "https://raw.githubusercontent.com/ALFinternet/windows-setup/refs/heads/main/core/diskpart.txt"
-curl -o "C:\Windows\System32\Sysprep\autounattend.xml" "https://raw.githubusercontent.com/ALFinternet/windows-setup/refs/heads/main/core/autounattend_server.xml"
+curl -o "C:\Windows\System32\Sysprep\autounattend.xml" "https://raw.githubusercontent.com/ALFinternet/windows-setup/refs/heads/main/core/autounattend_server-final.xml"
 curl -o "C:\Windows\System32\Sysprep\sysprep.exe - Shortcut.lnk" "https://raw.githubusercontent.com/ALFinternet/windows-setup/refs/heads/main/core/sysprep.exe - Shortcut.lnk"
 
 diskpart /s diskpart.txt
