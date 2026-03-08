@@ -37,4 +37,8 @@ $filePath = "C:\Users\Public\Desktop\Microsoft Edge.lnk"
 if (Test-Path $filePath) {
     Remove-Item -Path $filePath -Force
 }
+
+# Disable Azure ARC
+Get-WindowsFeature AzureArcSetup | Uninstall-WindowsFeature
+
 # shutdown /r /f /t 10
